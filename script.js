@@ -17,8 +17,9 @@ const seccionRecursos = document.getElementById('recursos');
 
 btnRecursos.addEventListener('click', function(e) {
     e.preventDefault(); // evita que el enlace haga scroll inmediato
-    seccionRecursos.style.display = 'block'; /
+    seccionRecursos.style.display = 'block'; // muestra la sección
     seccionRecursos.scrollIntoView({ behavior: 'smooth' }); 
 
+    // Opcional: animación de aparición con fade
     seccionRecursos.classList.add('show');
 });
