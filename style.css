@@ -5,10 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     color: #f5f5f5;
     height: 100%;
-    background-color: #ffffff00;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: transparent;
 }
 
 /* Barra de navegación */
@@ -17,19 +14,19 @@ body, html {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 51, 102, 0.95);
-    padding: 20px 50px;
-    position: sticky;
+    padding: 15px 30px;
+    position: fixed;  /* <-- fijo arriba */
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 80;
-    border-radius: 0 0 15px 15px; /* bordes redondeados abajo */
+    z-index: 100;
+    border-radius: 0 0 15px 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
     margin: 0;
     padding: 0;
 }
@@ -38,7 +35,7 @@ body, html {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding: 10px 20px;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -48,8 +45,13 @@ body, html {
 .nav-links li a:hover {
     color: #ffcc00;
     background-color: rgba(0, 153, 255, 0.9);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* Para que el contenido no quede debajo de la navbar */
+body {
+    padding-top: 70px; /* altura de la barra */
 }
 
 /* Fondo con dos imágenes */
@@ -62,7 +64,7 @@ body, html {
     z-index: -1;
     display: flex;
     flex-direction: column;
-    border-radius: 15px; /* bordes redondeados generales */
+    border-radius: 15px;
 }
 
 .background-container .bg {
@@ -70,7 +72,6 @@ body, html {
     background-size: cover;
     background-position: center;
     filter: brightness(0.7);
-    border-radius: 15px; /* redondear bordes de las imágenes */
 }
 
 .bg1 {
@@ -97,7 +98,7 @@ body, html {
     background-color: rgba(255, 255, 255, 0.75);
     color: #002244;
     padding: 40px 30px;
-    border-radius: 25px; /* más redondeado */
+    border-radius: 25px;
     max-width: 900px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     margin-top: 30px;
@@ -105,41 +106,13 @@ body, html {
 
 /* Títulos y párrafos */
 .text-container h1 {
-    font-size: 3em;
-    margin-bottom: 25px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .text-container p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.6;
-}
-
-/* Barra de búsqueda */
-.search-bar {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-}
-
-.search-bar input[type="text"] {
-    width: 80%;
-    max-width: 600px;
-    padding: 18px 25px;
-    font-size: 1.2em;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.search-bar input[type="text"]:focus {
-    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
-}
-
-.search-bar input[type="text"]::placeholder {
-    color: #555;
-    font-weight: bold;
 }
 
 /* Footer */
@@ -147,8 +120,33 @@ footer {
     background-color: rgba(0, 51, 102, 0.95);
     color: #ffffffd8;
     text-align: center;
-    padding: 20px 50px;
+    padding: 20px 30px;
     margin-top: 40px;
-    border-radius: 15px 15px 0 0; /* bordes redondeados arriba */
+    border-radius: 15px 15px 0 0;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-links li a {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .text-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .text-container h1 {
+        font-size: 1.8em;
+    }
+
+    .text-container p {
+        font-size: 1em;
+    }
 }
