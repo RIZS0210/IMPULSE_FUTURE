@@ -8,13 +8,13 @@ body, html {
     min-height: 100vh;
 }
 
-/* Barra de navegación */
+/* Barra de navegación (solo en recursos.html) */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 51, 102, 0.95);
-    padding: 20px 50px;
+    padding: 20px 0.5px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -47,6 +47,38 @@ body, html {
     background-color: rgba(0, 153, 255, 0.9);
     transform: scale(1.1);
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* Botón de regresar (para subpáginas) */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px;
+    padding: 10px 18px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0066cc, #00aaff);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.back-button span {
+    font-size: 1.4em;
+    transition: transform 0.2s;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #0055aa, #0099ff);
+    transform: scale(1.05);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+}
+
+.back-button:hover span {
+    transform: translateX(-4px);
 }
 
 /* Contenedor principal */
@@ -91,14 +123,12 @@ body, html {
     box-shadow: 0 12px 35px rgba(0,0,0,0.35);
 }
 
-/* Imagen destacada en la tarjeta */
 .card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
 
-/* Contenido dentro de la tarjeta */
 .card-content {
     padding: 20px;
 }
@@ -114,7 +144,6 @@ body, html {
     margin-bottom: 15px;
 }
 
-/* Botón */
 .card a {
     display: inline-block;
     text-decoration: none;
@@ -140,4 +169,81 @@ footer {
     margin-top: 50px;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 1.1em;
+        padding: 8px 15px;
+    }
+
+    .resources h1 {
+        font-size: 2.2em;
+        padding: 10px 20px;
+    }
+
+    .cards-container {
+        gap: 20px;
+    }
+
+    .card {
+        width: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .resources h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        padding: 8px 15px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .card h3 {
+        font-size: 1.3em;
+    }
+
+    .card p {
+        font-size: 0.95em;
+    }
+
+    .card a {
+        font-size: 0.9em;
+        padding: 10px 16px;
+    }
+
+    footer {
+        font-size: 0.9em;
+        padding: 15px 20px;
+    }
 }
